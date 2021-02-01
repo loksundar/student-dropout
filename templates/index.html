@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>STUDENT_DROP_OUT_PREDICTION</title>
+ <style>
+ 	h1 {text-align: center;}
+
+body {
+  background-image: url('img2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
+
+</head>
+
+<body style="background-color:powderblue;">
+ <div class="login">
+	<h1 style="color:orange;">STUDENT_DETAILS</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="POST">
+    	<table style="width:40%">
+    		<tr>
+    	<th> <p align="left"> GENDER </th><th>:</th>
+    	<th>    <select id ="gender" name = "gender">
+    	        <option value = "1"> Male </option>
+    	        <option value = "2"> Female </option>
+    	     </select>
+    	   </p></th></tr>
+    	   <tr>
+    	<th>   <p align="left"> CATEGORY </th><th>:</th>
+    	 <th>   <select  id = "caste" name = "caste">
+    	        <option value = "1"> OC </option>
+    	        <option value = "2"> BC </option>
+    	        <option value = "3"> SC/ST </option>
+    	        <option value = "4"> Others </option>
+    	     </select>
+    	   </p></th>
+      </tr>
+<tr><th><p align="left">	MATHEMATICS MARKS </th><th>:</th><th>	<input type="text" name="Mathematics_marks" placeholder="Mathematics_marks" required="required" /></p></th></tr>
+<tr><th> <p align="left">  ENGLISH MARKS </th><th>:</th><th> <input type="text" name="english_marks" placeholder="english_marks" required="required" /></th></tr></p>
+ <tr> <th><p align="left"> SCIENCE MARKS  </th><th>:</th><th><input type="text" name="science_marks" placeholder="science_marks" required="required" /></th></tr></p>
+ <tr> <th><p align="left"> SCIENCE TEACHERS </th><th>:</th><th> <input type="text" name="science_teacher" placeholder="science_teacher" required="required" /></th></tr></p>
+ <tr> <th><p align="left"> LANGUAGE TEACHERS </th><th>:</th><th> <input type="text" name="languages_teacher" placeholder="languages_teacher" required="required" /></th></p></tr>
+<tr>
+    	<th>   <p align="left"> GUARDIAN</th><th>:</th>
+    	 <th>   <select id = "guardian" name = "guardian">
+    	        <option value = "1"> FATHER </option>
+    	        <option value = "2"> MOTHER </option>
+    	        <option value = "0"> Others </option>
+    	     </select>
+    	   </p></th>
+      </tr>
+ <tr>
+    	<th>   <p align="left"> INTERNET </th><th>:</th>
+    	 <th>   <select id = "internet" name = "internet">
+    	        <option value = "1"> YES</option>
+    	        <option value = "0"> NO</option>
+    
+    	     </select>
+    	   </p></th>
+      </tr>  
+      <tr> <th> <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></th><tr>
+    </form>
+</table>
+   <br>
+   <br>
+  {{ pred }}
+
+ </div>
+
+
+</body>
+
+</html>
+<!--
+
+GENDER: <input type="radio" id="male" name="gender" value="2">
+					<label for="male">Male</label>
+					<input type="radio" id="female" name="gender" value="1">
+					<label for="female">Female</label>
+					<input type="radio" id="other" name="gender" value="3">
+					<label for="other">Other</label><br>
+ CASTE:<input type="radio" id="OBC" name="caste" value="2">
+					<label for="male">OBC</label>
+					<input type="radio" id="OC" name="caste" value="1">
+					<label for="female">OC</label>
+					<input type="radio" id="sc/st" name="caste" value="3">
+					<label for="other">SC/ST</label>
+					<input type="radio" id="other" name="caste" value="4">
+					<label for="other">OTHER</label><br>
+-->
