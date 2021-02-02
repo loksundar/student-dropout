@@ -23,6 +23,9 @@ def predict():
 
     if request.method == 'POST':
         int_features = [float(x) for x in request.form.values()]
+	int_features[2] = int_features[2]/100
+	int_features[3] = int_features[3]/100
+	int_features[4] = int_features[4]/100
         final = np.array(int_features)
         data_unseen = pd.DataFrame([final], columns = cols)
         prediction = model1.predict(data_unseen)
