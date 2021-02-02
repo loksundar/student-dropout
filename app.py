@@ -36,7 +36,7 @@ def predict():
         pred = stats.mode([prediction1,prediction3,prediction4,prediction5])[0][0]
         if pred==0:
             prediction = "NOT DROP"
-        else:
+        elif pred==1:
             prediction = "DROP"
     return render_template('index.html',pred='STUDENT WILL  {}'.format(prediction))
 if __name__ == '__main__':
