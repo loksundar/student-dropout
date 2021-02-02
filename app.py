@@ -25,6 +25,9 @@ def predict():
         int_features = [float(x) for x in request.form.values()]
         final = np.array(int_features)
         data_unseen = pd.DataFrame([final], columns = cols)
+        data_unseen['mathematics_marks'] = data_unseen['mathematics_marks']/100
+        data_unseen['english_marks'] = data_unseen['english_marks']/100
+        data_unseen['science_marks'] = data_unseen['science_marks']/100
         prediction = model1.predict(data_unseen)
         prediction1 = int(prediction[0])
         prediction = model3.predict(data_unseen)
@@ -36,7 +39,7 @@ def predict():
         pred = stats.mode([prediction1,prediction3,prediction4,prediction5])[0][0]
         if pred==0:
             prediction = "NOT DROP"
-        elif pred==1:
+        else:
             prediction = "DROP"
     return render_template('index.html',pred='STUDENT WILL  {}'.format(prediction))
 if __name__ == '__main__':
