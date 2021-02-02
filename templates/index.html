@@ -13,7 +13,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  font-size: 19px;
+}
 </style>
 
 </head>
@@ -24,7 +30,7 @@ body {
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-    	<table style="width:40%">
+    	<table style="width:50%" class="center">
     		<tr>
     	<th> <p align="left"> GENDER </th><th>:</th>
     	<th>    <select id ="gender" name = "gender">
@@ -70,7 +76,7 @@ body {
 </table>
    <br>
    <br>
-  {{ pred }}
+  <p>{{ pred }}</p>
 
  </div>
 
