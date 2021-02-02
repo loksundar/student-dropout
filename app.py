@@ -22,7 +22,7 @@ def index():
 def predict():
 
     if request.method == 'POST':
-        int_features = [int(x) for x in request.form.values()]
+        int_features = [float(x) for x in request.form.values()]
         final = np.array(int_features)
         data_unseen = pd.DataFrame([final], columns = cols)
         prediction = model1.predict(data_unseen)
