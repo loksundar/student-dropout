@@ -123,6 +123,7 @@ def data():
 		for i in adc:
 			ids.append(df['student_id'][i])
 		ids=pd.DataFrame(ids)
+		ids=ids.rename(columns={0: "Student_ID"})
 #		out = model1.predict(csvfile)
 		return render_template('data.html',data =ids.to_html())
 if __name__ == '__main__':
