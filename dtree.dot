@@ -1,5 +1,6 @@
 digraph Tree {
-node [shape=box, style="filled", color="black"] ;
+node [shape=box, style="filled", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
 0 [label=<node &#35;0<br/>english_marks &le; 0.998<br/>samples = 15009<br/>value = [14295, 714]<br/>class = drop>, fillcolor="#e68743"] ;
 1 [label=<node &#35;1<br/>science_teacher &le; 5.5<br/>samples = 14967<br/>value = [14295, 672]<br/>class = drop>, fillcolor="#e68742"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
