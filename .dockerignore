@@ -1,0 +1,12 @@
+Dockerfile
+README.md
+*.pyc
+*.pyo
+*.pyd
+*.ipynb
+*.csv
+*.pptx
+*.dot
+*.png
+__pycache__
+.pytest_cache

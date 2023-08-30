@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Results</title>
+<style>
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right,white, blue);
+}
+</style>
+</head>
+<body id ="grad1">
+<h2>The following Id of Students are going to Dropout from School</h2>
+{{ data | safe }}
+</body>
+</html>
